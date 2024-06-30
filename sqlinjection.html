@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection Sample</title>
+</head>
+<body>
+    <h3>Category - Search</h3>
+    <hr>
+    <form action="./sqlinjection.php" method="get">
+        ID: <input type="text" name="id">
+        <input type="submit" value="search">
+    </form>
+    <h5 style="color: red;"> ボックスに "9 or 1 = 1" を入れてSQLインジェクションを実行してみよう</h5>
+    <h5 style="color: red;"> "select * from categories where id = 9 or 1 = 1" の論理和が成立してしまうので、全てのデータが取得されてしまう。</h5>
+</body>
+</html>
